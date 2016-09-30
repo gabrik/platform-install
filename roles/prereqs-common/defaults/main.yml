@@ -1,8 +1,8 @@
 ---
 # prereqs-common/defaults/main.yml
 
-min_memtotal_mb: 48000
-min_processor_vcpus: 12
+min_memtotal_mb: 32000
+min_processor_vcpus: 8
 
 kvm_check: true
 
