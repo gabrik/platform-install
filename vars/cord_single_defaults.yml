@@ -69,7 +69,7 @@ head_vm_list:
       - "glance"
     ipv4_last_octet: 30
     cpu: 2
-    memMB: 4096
+    memMB: 2048
     diskGB: 160
     forwarded_ports:
       - { ext: 9292, int: 9292 }
@@ -80,7 +80,7 @@ head_vm_list:
       - "keystone"
     ipv4_last_octet: 40
     cpu: 2
-    memMB: 4096
+    memMB: 2048
     diskGB: 40
     forwarded_ports:
       - { ext: 35357, int: 35357 }
@@ -143,7 +143,7 @@ head_vm_list:
       - "onos-cord"
     ipv4_last_octet: 110
     cpu: 2
-    memMB: 4096
+    memMB: 2048
     diskGB: 40
     docker_path: "cord"
 
@@ -152,7 +152,7 @@ head_vm_list:
       - "onos-fabric"
     ipv4_last_octet: 120
     cpu: 2
-    memMB: 4096
+    memMB: 2048
     diskGB: 40
     docker_path: "cord"
 
@@ -172,7 +172,7 @@ head_vm_list:
       - "nova-compute"
     ipv4_last_octet: 140
     cpu: 6
-    memMB: 16384
+    memMB: 8192
     diskGB: 240
 
 
@@ -229,4 +229,3 @@ service_relations:
 
   - name: ntp
     relations: [ "nova-compute", ]
-
