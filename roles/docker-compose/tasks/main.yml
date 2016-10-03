@@ -13,8 +13,8 @@
   async_status: jid={{ onos_setup_playbook.ansible_job_id }}
   register: onos_setup_playbook_result
   until: onos_setup_playbook_result.finished
-  delay: 10
-  retries: 120
+  delay: 20
+  retries: 200
 
 - name: Copy SSL Certs to ONOS so docker-compose can find it
   when: "{{ head_vm_list | map(attribute='name') | list | intersect(['onos-cord-1']) | list | length }}"
@@ -36,8 +36,8 @@
   async_status: jid={{ xos_setup_playbook.ansible_job_id }}
   register: xos_setup_playbook_result
   until: xos_setup_playbook_result.finished
-  delay: 10
-  retries: 120
+  delay: 20
+  retries: 200
 
 - name: Copy admin-openrc.sh into XOS container
   when: "{{ head_vm_list | map(attribute='name') | list | intersect(['xos-1']) | list | length }}"
@@ -49,6 +49,6 @@
   async_status: jid={{ test_client_playbook.ansible_job_id }}
   register: test_client_playbook_result
   until: test_client_playbook_result.finished
-  delay: 10
-  retries: 120
+  delay: 20
+  retries: 200
 
